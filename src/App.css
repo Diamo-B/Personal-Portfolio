@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&family=Itim&family=Yesteryear&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body{
+  height: 100%;
+}
+
+body{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
+.item {
+  width: 30%;
+  overflow: visible;
+  stroke: #000;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
