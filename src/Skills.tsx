@@ -1,6 +1,6 @@
 import ReturnToTop from "./components/ReturnToTop";
 
-import { motion, useAnimate, useInView, useScroll } from "framer-motion";
+import { motion, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
 import FrontEnd from "./components/skills/frontEnd";
 import Backend from "./components/skills/Backend";
