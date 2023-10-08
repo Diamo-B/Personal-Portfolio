@@ -77,8 +77,8 @@ const HalfCircle = ({activePanel}:Props) => {
         </div>
         <div className="flex items-center justify-between pl-20 -mr-5">
           <h1 className="text-white font-bold text-4xl font-itim ">My Skills</h1>
-          <button className={`border-2 rounded-full border-white text-slate-900 font-bold text-xl bg-white w-28 h-10
-            ${showCase.middle === activePanel ? "bg-amber-500 text-white" : ""}
+          <button className={`border-2 rounded-full border-white  font-bold text-xl w-28 h-10
+            ${showCase.middle === activePanel ? "bg-amber-500 text-white" : "bg-white text-slate-900"}
           `}
           >
             <motion.p
