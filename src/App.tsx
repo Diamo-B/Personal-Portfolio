@@ -1,4 +1,5 @@
 import Home from "./Home"
+import Projects from "./Projects"
 import Skills from "./Skills"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Home/>
       <Skills/>
+      <Projects/>
     </>
   )
 }

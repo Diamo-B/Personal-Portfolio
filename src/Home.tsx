@@ -27,7 +27,7 @@ const Home = () => {
   const introText = "Hello, I'm Bachar, a passionate software engineering student from Morocco, having my senior year of studies at the Moroccan School of Engineering Sciences";
 
   return (
-    <div className="h-screen overflow-x-hidden pt-10 2xl:pt-28" id="intro">
+    <div className="h-screen overflow-hidden pt-10 2xl:pt-28" id="intro">
       <Title/>
       <Navbar />
       <div className="flex justify-center pl-24 2xl:pl-32">
