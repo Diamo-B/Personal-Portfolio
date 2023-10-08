@@ -17,9 +17,15 @@ const FrontEnd = ({textAnimation}: Props) => {
         />
       }
       <div className="max-h-full grid grid-cols-5 justify-items-center mt-5 h-fit gap-2">
-        <div className="h-32 w-32 bg-white px-4 py-2 rounded-2xl flex flex-col justify-center items-center col-span-5">
-          <img className="w-20" src="/react.svg" alt="" />
-          <h1 className="font-bold">ReactTs</h1>
+        <div className="col-span-5 w-full flex justify-evenly">
+          <div className="h-32 w-32 bg-white px-4 py-2 rounded-2xl flex flex-col justify-center items-center gap-1">
+            <img className="w-16" src="/Vite.svg" alt="" />
+            <h1 className="font-bold">Vite</h1>
+          </div>
+          <div className="h-32 w-32 bg-white px-4 py-2 rounded-2xl flex flex-col justify-center items-center">
+            <img className="w-20" src="/react.svg" alt="" />
+            <h1 className="font-bold">ReactTs</h1>
+          </div>
         </div>
         <div className="flex justify-evenly">
           <div className="h-36 w-32 bg-white px-4 py-2 rounded-2xl flex flex-col justify-center items-center gap-5">

@@ -53,7 +53,7 @@ const Navbar = () => {
           onClick={() => scrollToSection("about")}
         >
           <UilDesktop className="w-5 group-hover:text-sky-700" />
-          <p className="group-hover:text-sky-700">Desktop</p>
+          <p className="group-hover:text-sky-700">About</p>
         </button>
       </div>
     </motion.div>

@@ -2,12 +2,13 @@ import { UilArrowUp } from '@iconscout/react-unicons'
 import useAutoScroll from '../helpers/autoScroll';
 
 type Props = {
-    idToGoTo: string
+    idToGoTo: string,
+    outline? : boolean
 }
-const ReturnToTop = ({idToGoTo}:Props) => {
+const ReturnToTop = ({idToGoTo, outline}:Props) => {
     const {scrollToSection} = useAutoScroll()
     return ( 
-        <button className='bg-white w-14 h-14 rounded-full flex justify-center items-center '
+        <button className={`bg-white w-14 h-14 rounded-full flex justify-center items-center ${outline? "border-2 border-slate-700" : ""}`}
             onClick={()=>{return scrollToSection(idToGoTo)}}
         >
             <UilArrowUp className='w-10 h-10'/>

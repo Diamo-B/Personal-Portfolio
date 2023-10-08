@@ -8,4 +8,6 @@ declare module "@iconscout/react-unicons" {
     export const UilFolder : Icon;
     export const UilDesktop : Icon; 
     export const UilArrowUp : Icon;
+    export const UilArrowCircleRight: Icon;
+    export const UilArrowCircleLeft: Icon;
 }
