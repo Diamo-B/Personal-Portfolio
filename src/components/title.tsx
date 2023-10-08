@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 const Title = () => {
 
   const icon = {
@@ -15,7 +16,7 @@ const Title = () => {
         fill:{
           duration: 3
         }
-      },
+      }
     }
   };
 

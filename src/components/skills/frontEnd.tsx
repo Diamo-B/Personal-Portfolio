@@ -1,15 +1,21 @@
 import AnimatedText from "../AnimatedWrittenText";
+type Props = {
+  textAnimation: boolean;
+}
 
-const FrontEnd = () => {
+const FrontEnd = ({textAnimation}: Props) => {
     const introText = "I am primarily a react developer, has experience building projects with reactJs for over a year now and this is a part of my front-end tools";
   return (
     <div>
-      <AnimatedText
-        text={introText}
-        colorSuffix="white"
-        sizeSuffix="lg"
-        cursorHeight="h-5"
-      />
+      {
+        textAnimation &&
+        <AnimatedText
+          text={introText}
+          colorSuffix="white"
+          sizeSuffix="lg"
+          cursorHeight="h-5"
+        />
+      }
       <div className="max-h-full grid grid-cols-5 justify-items-center mt-5 h-fit gap-2">
         <div className="h-32 w-32 bg-white px-4 py-2 rounded-2xl flex flex-col justify-center items-center col-span-5">
           <img className="w-20" src="/react.svg" alt="" />

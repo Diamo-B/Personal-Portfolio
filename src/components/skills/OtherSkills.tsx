@@ -4,8 +4,8 @@ type Props = {
   textAnimation: boolean;
 }
 
-const Backend = ({textAnimation}: Props) => {
-    const introText = "I am well versed in the different backend principles, starting from http request till everything that has a relationship with microservices... And these are the backend frameworks I used before";
+const OtherSkills = ({textAnimation}: Props) => {
+    const introText = "My knowledge and skills extend beyond coding, encompassing areas such as DevOps, system administration, management, testing, computer maintenance, and more";
   return (
     <div className=" 2xl:transform 2xl:scale-125">
       {
@@ -19,34 +19,37 @@ const Backend = ({textAnimation}: Props) => {
       }
       <div className="max-h-full grid grid-cols-4 justify-items-center mt-5 h-fit gap-2 ">
         <div className="flex justify-evenly">
-          <div className="h-36 w-32 bg-white px-4 pt-1 rounded-2xl flex flex-col justify-center items-center gap-4">
-            <img className="w-16" src="/springboot.svg" alt="" />
+          <div className="h-36 w-32 bg-white rounded-2xl flex flex-col py-3 items-center ">
+            <img className="w-24" src="/docker.svg" alt="" />
             <h1 className="font-bold text-sm text-center">
-              Spring Boot
+              Docker
             </h1>
           </div>
         </div>
         <div className="flex justify-evenly">
-          <div className="h-36 w-32 bg-white rounded-2xl flex flex-col pt-7 items-center gap-3">
-            <img className="w-52" src="/expressJs.svg" alt="" />
+          <div className="h-36 w-32 bg-white rounded-2xl flex flex-col items-center px-2 py-3">
+            <img className="w-20" src="/archLinux.svg" alt="" />
             <h1 className="font-bold text-sm text-center">
-              ExpressJs
+              bash/zsh & linux administration
             </h1>
           </div>
         </div>
         <div className="flex justify-evenly">
-          <div className="h-36 w-32 bg-white rounded-2xl flex flex-col py-4 items-center gap-2">
-            <img className="w-20" src="/nextJs.svg" alt="" />
+          <div className="h-36 px-2 w-32 bg-white rounded-2xl flex flex-col pt-3 items-center justify-center gap-2">
+            <div className="flex justify-center ">
+                <img className="w-16" src="/raspberryPi.svg" alt="" />
+                <img className="w-16" src="/arduino.svg" alt="" />
+            </div>
             <h1 className="font-bold text-sm text-center">
-              NextJs
+              embedded systems
             </h1>
           </div>
         </div>
         <div className="flex justify-evenly">
           <div className="h-36 w-32 bg-white rounded-2xl flex flex-col items-center py-5 gap-2">
-            <img className="w-20 ml-3" src="/dotnet.svg" alt="" />
+            <img className="w-20 ml-3" src="/jest.svg" alt="" />
             <h1 className="font-bold text-sm text-center">
-              Asp.net
+              Unit Testing
             </h1>
           </div>
         </div>
@@ -58,4 +61,4 @@ const Backend = ({textAnimation}: Props) => {
   );
 };
 
-export default Backend;
+export default OtherSkills;

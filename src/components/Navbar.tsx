@@ -6,11 +6,13 @@ import {
   UilDesktop,
 } from "@iconscout/react-unicons";
 import useAutoScroll from "../helpers/autoScroll";
+
 const Navbar = () => {
-  const {scrollToSection} = useAutoScroll()
+  const {scrollToSection} = useAutoScroll();
+
   return (
     <motion.div
-      className="w-full flex mt-5 justify-center"
+      className="w-full flex mt-5 2xl:mt-10 justify-center"
       initial={{
         y: 100,
         opacity: 0,

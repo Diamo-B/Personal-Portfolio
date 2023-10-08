@@ -1,19 +1,21 @@
 import { motion, useMotionValue, useTransform, useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, Dispatch, SetStateAction } from "react";
 import CursorBlinker from "./cursorBlinking";
 
 type Props = {
   text: string;
   colorSuffix?: string;
   sizeSuffix?: string;
-  cursorHeight?: string
+  cursorHeight?: string,
+  isAnimationComplete?: Dispatch<SetStateAction<boolean>>
 };
 
 const AnimatedText = ({
   text,
   colorSuffix,
   sizeSuffix,
-  cursorHeight
+  cursorHeight,
+  isAnimationComplete
 }: Props) => {
   const textIndex = useMotionValue(0);
   // Use the custom useAnimate hook to control the animation
@@ -34,6 +36,9 @@ const AnimatedText = ({
   useEffect(() => {
     if (isInView) {
       controls.play()
+      setTimeout(()=>{
+         isAnimationComplete && isAnimationComplete(true)
+      },(controls.duration/2)*1000)
     }
   }, [isInView])
 
