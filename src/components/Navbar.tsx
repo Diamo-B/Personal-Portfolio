@@ -51,6 +51,9 @@ const Navbar = () => {
                         y: 0,
                         opacity: 1,
                     }}
+                    onClick={()=>{
+                        scrollToSection("intro")
+                    }}
                 >
                     <p className="font-Roboto-mono font-bold text-xl">01</p>
                     <p>Intro</p>
@@ -69,6 +72,9 @@ const Navbar = () => {
                         y: 0,
                         opacity: 1,
                     }}
+                    onClick={()=>{
+                        scrollToSection("skills")
+                    }}
                 >
                     <p className="font-Roboto-mono font-bold text-xl">02</p>
                     <p>Skills</p>
@@ -86,6 +92,9 @@ const Navbar = () => {
                         },
                         y: 0,
                         opacity: 1,
+                    }}
+                    onClick={()=>{
+                        scrollToSection("projects")
                     }}
                 >
                     <p className="font-Roboto-mono font-bold text-xl">03</p>
