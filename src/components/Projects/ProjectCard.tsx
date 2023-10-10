@@ -106,7 +106,7 @@ const ProjectCard = ({
                     {Image}
                 </div>
                 <a href={githubLink} target="__blank" className="border-2 rounded-full w-full py-1 bg-white text-slate-700 font-bold flex items-center justify-center gap-2">
-                    <img src="/public/github.svg" className="w-5 h-5" alt="" />
+                    <img src="/github.svg" className="w-5 h-5" alt="" />
                     Github Repository
                 </a>
             </div>
