@@ -9,7 +9,7 @@ import { useState } from "react";
 import ReturnToTop from "./components/ReturnToTop";
 
 const Projects = () => {
-    const intro ="Throughout the last 2 years, I made some projects, either school or personal projects. you'll find below a description of each one of them";
+    const intro ="Throughout the last 2 years, I made some projects, either school or personal projects. you'll find below a description of the most relevant ones";
     const { projectsData } = useProjectsData();
     const [selectedIndex, setSelectedIndex] = useState<number>(0) 
     const [next, setNext] = useState<boolean>(false);

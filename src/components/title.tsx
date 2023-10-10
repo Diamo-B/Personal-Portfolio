@@ -23,7 +23,6 @@ const Title = () => {
   return (
     <div className="w-full flex justify-center ">
       <motion.svg
-        width="400"
         viewBox="584.625,438.575,750.75,101.85001"
         className={"item"}
       >

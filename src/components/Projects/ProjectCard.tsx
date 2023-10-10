@@ -1,9 +1,8 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { pills } from "./hooks/useProjectsData";
 import Pill from "./pillShowCase";
 import { motion, useAnimation } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
-import AnimatedText from "../AnimatedWrittenText";
 
 type Props = {
     Image: JSX.Element;
@@ -71,12 +70,10 @@ const ProjectCard = ({
     useEffect(() => {
         if (next) {
             cardControls.start("fadeNext").then(() => {
-                setAnimationEnded(false);
                 setSelectedIndex((prev: number) => prev + 1);
                 cardControls.start("translateRight").then(() => {
                     cardControls.start("show").then(() => {
                         setNext(false);
-                        setAnimationEnded(true);
                     });
                 });
             });
@@ -86,19 +83,16 @@ const ProjectCard = ({
     useEffect(() => {
         if (prev) {
             cardControls.start("fadePrev").then(() => {
-                setAnimationEnded(false);
                 setSelectedIndex((prev: number) => prev - 1);
                 cardControls.start("translateLeft").then(() => {
                     cardControls.start("show").then(() => {
                         setPrev(false);
-                        setAnimationEnded(true)
                     });
                 });
             });
         }
     }, [prev]);
 
-    const [animationEnded, setAnimationEnded] = useState<boolean>(true);
 
     return (
         <motion.div
@@ -118,11 +112,8 @@ const ProjectCard = ({
             </div>
             <div className="col-span-2 text-center flex flex-col gap-2 justify-center text-white">
                 <h1 className="text-xl font-bold">{Title}</h1>
-                <div className="text-left px-10">
-                    {
-                        animationEnded &&
-                        <AnimatedText text={Description} cursorHeight="5" sizeSuffix="base" isAnimationComplete={setAnimationEnded}/>
-                    }
+                <div className="text-left px-10 font-itim">
+                    {Description}
                 </div>
                 <div
                     className={`flex ${

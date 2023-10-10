@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily:{
         ingrid: ["Ingrid Darling", "cursive"],
-        itim: ["Itim", "cursive"]
+        itim: ["Itim", "cursive"],
+        "Roboto-mono": ['Roboto Mono', "monospace"]
       }
     },
   },
