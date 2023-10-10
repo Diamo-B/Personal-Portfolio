@@ -41,10 +41,10 @@ const Home = () => {
                   Download CV
                 </button>
                 <button className="w-10">
-                  <img src="/public/github.svg" alt="github repo" />
+                  <img src="/github.svg" alt="github repo" />
                 </button>
                 <button className="w-14">
-                  <img src="/public/linkedin.svg" alt="linkedin profile" />
+                  <img src="/linkedin.svg" alt="linkedin profile" />
                 </button>
             </div>
             <div className="flex justify-center pl-24 2xl:pl-32">

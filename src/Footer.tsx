@@ -25,7 +25,7 @@ const Footer = () => {
                     initial={{ rotate: 0 }}
                     animate={{ rotate: 360 }}
                     transition={{ repeat: Infinity, duration: 2 }}
-                    src="/public/react.svg"
+                    src="/react.svg"
                     className="mx-2 w-10 inline animate-spin"
                     alt="react logo"
                 />
