@@ -1,5 +1,4 @@
 import ReturnToTop from "./components/ReturnToTop";
-
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
@@ -7,20 +6,9 @@ import FrontEnd from "./components/skills/frontEnd";
 import Backend from "./components/skills/Backend";
 import HalfCircle from "./components/skills/HalfCircle";
 import OtherSkills from "./components/skills/OtherSkills";
-import { UilAngleDoubleDown } from '@iconscout/react-unicons'
+import ScrollDown from "./components/skills/ScrollDownForMore";
 
 const Skills = () => {
-    const pulseVariant = {
-        initial: { opacity: 0, transition:{
-            duration: 2}
-        },
-        animate: { opacity: 1, transition:{
-            duration: 2}
-        },
-        exit: { opacity: 0, transition:{
-            duration: 2}
-        }
-    }
     const variants = {
         hidden: {
             opacity: 0,
@@ -94,29 +82,21 @@ const Skills = () => {
                         />
                     </div>
                     <div className="w-96"></div>
-                    <div className="w-full flex justify-center items-center h-full">
-                        <motion.div
-                            className="h-fit w-3/4 2xl:w-2/4 2xl:transform 2xl:scale-125 flex flex-col justify-center"
-                            ref={frontRef}
-                            animate={frontControls}
-                            initial="hidden"
-                            variants={variants}
-                        >
-                            <FrontEnd textAnimation={textAnimation} />
-                        </motion.div>
+                    <div className="w-full h-full flex flex-col justify-center relative">
+                        <div className="w-full h-full flex justify-center items-center">
+                            <motion.div
+                                className="h-fit w-3/4 2xl:w-2/4 2xl:transform 2xl:scale-125 flex flex-col justify-center"
+                                ref={frontRef}
+                                animate={frontControls}
+                                initial="hidden"
+                                variants={variants}
+                            >
+                                <FrontEnd textAnimation={textAnimation} />
+                            </motion.div>
+                        </div>
+                        <ScrollDown />
                     </div>
                 </div>
-                <motion.div className="w-full h-1/12 flex flex-col justify-center items-center text-white"
-                    variants={pulseVariant}
-                    initial={"initial"}
-                    animate={"animate"}
-                    exit={"exit"}
-                >
-                    <UilAngleDoubleDown className="w-12 h-12"/>
-                    <p className="font-bold text-base">
-                        Scroll down for more
-                    </p>
-                </motion.div>
             </div>
 
             {/* 
@@ -126,7 +106,7 @@ const Skills = () => {
             <div className="h-screen relative" id="backView">
                 <div className="w-full  flex gap-20 h-full">
                     <div className="w-96"></div>
-                    <div className="w-full flex justify-center">
+                    <div className="relative w-full flex flex-col justify-center">
                         <div
                             className={`absolute right-5 ${
                                 backInView ? "justify-end pb-16" : "-top-36"
@@ -136,7 +116,7 @@ const Skills = () => {
                         </div>
                         <div className="w-full flex flex-col justify-center items-center">
                             <motion.div
-                                className="h-fit w-3/4 2xl:w-2/4 "
+                                className="h-fit w-3/4 2xl:w-2/4 relative"
                                 ref={backRef}
                                 animate={backControls}
                                 initial="hidden"
@@ -145,6 +125,7 @@ const Skills = () => {
                                 <Backend textAnimation={BtextAnimation} />
                             </motion.div>
                         </div>
+                            <ScrollDown/>
                     </div>
                 </div>
             </div>
@@ -163,15 +144,15 @@ const Skills = () => {
                             <ReturnToTop idToGoTo={"intro"} />
                         </div>
                         <div className="w-full h-full flex flex-col justify-center items-center">
-                          <motion.div
-                              className="h-fit w-3/4 2xl:w-2/4"
-                              ref={othersRef}
-                              animate={othersControls}
-                              initial="hidden"
-                              variants={variants}
-                          >
-                              <OtherSkills textAnimation={OtextAnimation} />
-                          </motion.div>
+                            <motion.div
+                                className="h-fit w-3/4 2xl:w-2/4"
+                                ref={othersRef}
+                                animate={othersControls}
+                                initial="hidden"
+                                variants={variants}
+                            >
+                                <OtherSkills textAnimation={OtextAnimation} />
+                            </motion.div>
                         </div>
                     </div>
                 </div>

@@ -51,9 +51,6 @@ const Backend = ({textAnimation}: Props) => {
           </div>
         </div>
       </div>
-      <p className="col-span-5 text-center mt-5 font-bold text-xl text-white">
-        And there's more ...
-      </p>
     </div>
   );
 };

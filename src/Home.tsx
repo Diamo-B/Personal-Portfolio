@@ -34,18 +34,20 @@ const Home = () => {
         <div className="h-full overflow-hidden pt-5 2xl:pt-28" id="intro">
             <Title />
             <div className="w-full flex justify-center items-center gap-2 mt-5">
-                <button className="w-42 bg-slate-900 border-2 border-slate-900 rounded-full text-white font-base text-lg font-itim px-5 py-1 flex items-center">
+                <a className="w-42 bg-slate-900 border-2 border-slate-900 rounded-full text-white font-base text-lg font-itim px-5 py-1 flex items-center"
+                    href="https://mail.google.com/mail/?view=cm&to=elkarni.bachar%40gmail.com" target="__blank"
+                >
                   Contact Me <UilArrowRight className="inline"/>
-                </button>
+                </a>
                 <button className="w-42 rounded-full text-slate-900 border-2 border-slate-900 font-base text-lg font-itim px-5 py-1">
                   Download CV
                 </button>
-                <button className="w-10">
+                <a className="w-10" href="https://github.com/Diamo-B" target="__blank">
                   <img src="/github.svg" alt="github repo" />
-                </button>
-                <button className="w-14">
+                </a>
+                <a className="w-14" href="https://www.linkedin.com/in/bachar-elkarni/" target="__blank">
                   <img src="/linkedin.svg" alt="linkedin profile" />
-                </button>
+                </a>
             </div>
             <div className="flex justify-center pl-24 2xl:pl-32">
                 <motion.div className="grid grid-cols-2 justify-items-center place-items-center ">

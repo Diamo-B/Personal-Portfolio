@@ -5,7 +5,7 @@ const Navbar = () => {
     const { scrollToSection } = useAutoScroll();
 
     return (
-        <div className="w-full py-3 flex justify-between px-20 items-center">
+        <div className="w-full py-3 hidden lg:flex justify-between px-20 items-center">
             <motion.svg
                 viewBox="564.34998,282.575,237.30002,101.85001"
                 className="w-24"
@@ -40,7 +40,7 @@ const Navbar = () => {
                 <motion.button
                     className="flex justify-center items-center gap-2 border-b-4"
                     initial={{
-                        y: 20,
+                        x: 20,
                         opacity: 0,
                     }}
                     animate={{
@@ -48,7 +48,7 @@ const Navbar = () => {
                             duration: 1,
                             delay: 1,
                         },
-                        y: 0,
+                        x: 0,
                         opacity: 1,
                     }}
                     onClick={()=>{
@@ -61,7 +61,7 @@ const Navbar = () => {
                 <motion.button
                     className="flex justify-center items-center gap-2 border-b-4"
                     initial={{
-                        y: 20,
+                        x: 20,
                         opacity: 0,
                     }}
                     animate={{
@@ -69,7 +69,7 @@ const Navbar = () => {
                             duration: 1,
                             delay: 1,
                         },
-                        y: 0,
+                        x: 0,
                         opacity: 1,
                     }}
                     onClick={()=>{
@@ -82,7 +82,7 @@ const Navbar = () => {
                 <motion.button
                     className="flex justify-center items-center gap-2 border-b-4"
                     initial={{
-                        y: 20,
+                        x: 20,
                         opacity: 0,
                     }}
                     animate={{
@@ -90,7 +90,7 @@ const Navbar = () => {
                             duration: 1,
                             delay: 1,
                         },
-                        y: 0,
+                        x: 0,
                         opacity: 1,
                     }}
                     onClick={()=>{
