@@ -7,15 +7,15 @@ const FrontEnd = ({textAnimation}: Props) => {
     const introText = "I am primarily a react developer, has experience building projects with reactJs for over a year now and this is a part of my front-end tools";
   return (
     <div>
-      {/* {
-        textAnimation && */}
+      {
+        textAnimation && 
         <AnimatedText
           text={introText}
           colorSuffix="white"
           size="text-sm lg:text-lg"
           cursorHeight="h-5"
         />
-      {/* } */}
+      }
       <div className=" lg:max-h-full grid grid-cols-2 lg:grid-cols-5 justify-items-center mt-5 h-auto lg:h-fit gap-2">
         <div className="col-span-2 lg:col-span-5 w-full flex justify-evenly">
           <div className="h-32 w-32 bg-white px-4 py-2 rounded-2xl flex flex-col justify-center items-center gap-1">
