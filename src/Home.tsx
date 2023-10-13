@@ -1,15 +1,11 @@
 import { AnimationPlaybackControls, animate, motion } from "framer-motion";
 import Title from "./components/title";
 import AnimatedText from "./components/AnimatedWrittenText";
-import { useState, useRef, useEffect, RefObject } from "react";
+import { useState, useRef, useEffect } from "react";
 import Contact from "./components/Contact";
 import isMobile from "./helpers/checkIfMobile";
 
-type Props = {
-    contactDivRef: RefObject<HTMLDivElement>
-}
-
-const Home = ({contactDivRef}:Props) => {
+const Home = () => {
     const [textAnimationCompleted, setTextAnimationCompleted] =
         useState<boolean>(false);
     const imageRef = useRef<HTMLImageElement>(null);
@@ -39,10 +35,8 @@ const Home = ({contactDivRef}:Props) => {
             <div className="w-full mb-5 lg:mb-0">
                 <Title />
             </div>
-            <div className={`${isMobile()?"hidden":""} absolute h-full top-0 left-0 flex flex-col justify-center items-center z-50 bg-slate-900/60 w-full lg:h-fit lg:relative lg:flex-row lg:bg-transparent order-3 lg:-order-none`}
-                ref={contactDivRef}
-            >
-                <Contact parentRef={contactDivRef}/>
+            <div className={`${isMobile()?"hidden":""} absolute h-full top-0 left-0 flex flex-col justify-center items-center z-50 bg-slate-900/60 w-full lg:h-fit lg:relative lg:flex-row lg:bg-transparent order-3 lg:-order-none`}>
+                <Contact />
             </div>
             <div className="flex justify-center lg:pl-24 2xl:pl-32">
                 <motion.div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center place-items-center ">

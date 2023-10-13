@@ -1,5 +1,7 @@
 import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
+import isMobile from "./helpers/checkIfMobile";
+import Contact from "./components/Contact";
 const Footer = () => {
     const [scopeBlue, animateBlue] = useAnimate();
     const [scopeMid, animateMid] = useAnimate();
@@ -28,6 +30,12 @@ const Footer = () => {
             className="w-full bg-slate-800 text-white flex flex-col items-center py-5 z-40"
             id="contact"
         >
+            {
+                isMobile()&&
+                <div className="w-full flex justify-center items-center">
+                    <Contact/>
+                </div>
+            }
             <p className="font-itim">Made by Elkarni Bachar using </p>
             <div>
                 <a href="https://react.dev/" target="__blank">
@@ -172,6 +180,7 @@ const Footer = () => {
                 </a>
             </div>
             <p className="font-itim">10-2023</p>
+            <p className="font-itim">elkarni.bachar@gmail.com</p>
         </div>
     );
 };
