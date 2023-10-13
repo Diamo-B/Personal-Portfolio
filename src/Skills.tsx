@@ -7,6 +7,7 @@ import Backend from "./components/skills/Backend";
 import HalfCircle from "./components/skills/HalfCircle";
 import OtherSkills from "./components/skills/OtherSkills";
 import ScrollDown from "./components/skills/ScrollDownForMore";
+import isMobile from "./helpers/checkIfMobile";
 
 const Skills = () => {
     const variants = {
@@ -23,7 +24,7 @@ const Skills = () => {
     };
     const [textAnimation, startTextAnimation] = useState(false);
     const frontControls = useAnimation();
-    const [frontRef, frontInView] = useInView({ threshold: 1 });
+    const [frontRef, frontInView] = useInView({ threshold: isMobile()?.5:1 });
 
     useEffect(() => {
         if (frontInView) {
@@ -36,7 +37,7 @@ const Skills = () => {
 
     const [BtextAnimation, startBTextAnimation] = useState(false);
     const backControls = useAnimation();
-    const [backRef, backInView] = useInView({ threshold: 1 });
+    const [backRef, backInView] = useInView({ threshold: isMobile()?.5:1 });
 
     useEffect(() => {
         if (backInView) {
@@ -50,7 +51,7 @@ const Skills = () => {
 
     const [OtextAnimation, startOTextAnimation] = useState(false);
     const othersControls = useAnimation();
-    const [othersRef, othersInView] = useInView({ threshold: 1 });
+    const [othersRef, othersInView] = useInView({ threshold: isMobile()?.5:1 });
 
     useEffect(() => {
         if (othersInView) {
@@ -72,16 +73,16 @@ const Skills = () => {
   //explain: this is the frontend skill panel
 */}
 
-            <div className="flex flex-col h-screen py-10" id="frontView">
+            <div className="flex flex-col h-full lg:h-screen py-10" id="frontView">
                 <div className="w-full flex gap-20 h-full">
-                    <div className="absolute top-0 h-full py-32 2xl:py-64">
+                    <div className="absolute top-0 h-full py-32 hidden lg:block 2xl:py-64">
                         <HalfCircle
                             activePanel={
                                 activeCircle !== undefined ? activeCircle : ""
                             }
                         />
                     </div>
-                    <div className="w-96"></div>
+                    <div className="w-96 hidden lg:block"></div>
                     <div className="w-full h-full flex flex-col justify-center relative">
                         <div className="w-full h-full flex justify-center items-center">
                             <motion.div
@@ -94,7 +95,9 @@ const Skills = () => {
                                 <FrontEnd textAnimation={textAnimation} />
                             </motion.div>
                         </div>
-                        <ScrollDown />
+                        {
+                            !isMobile() && <ScrollDown />
+                        }
                     </div>
                 </div>
             </div>
@@ -105,15 +108,8 @@ const Skills = () => {
 
             <div className="h-screen relative" id="backView">
                 <div className="w-full  flex gap-20 h-full">
-                    <div className="w-96"></div>
+                    <div className="w-96 hidden lg:block"></div>
                     <div className="relative w-full flex flex-col justify-center">
-                        <div
-                            className={`absolute right-5 ${
-                                backInView ? "justify-end pb-16" : "-top-36"
-                            } h-full flex flex-col`}
-                        >
-                            <ReturnToTop idToGoTo={"intro"} />
-                        </div>
                         <div className="w-full flex flex-col justify-center items-center">
                             <motion.div
                                 className="h-fit w-3/4 2xl:w-2/4 relative"
@@ -125,7 +121,12 @@ const Skills = () => {
                                 <Backend textAnimation={BtextAnimation} />
                             </motion.div>
                         </div>
-                            <ScrollDown/>
+                        <div className={`absolute  ${isMobile()?"bottom-0 hidden":"bottom-20"} right-3`}>
+                            <ReturnToTop idToGoTo={"intro"} />
+                        </div>
+                        {
+                            !isMobile() && <ScrollDown nonAbsolute={true}/>
+                        }
                     </div>
                 </div>
             </div>
@@ -135,14 +136,9 @@ const Skills = () => {
 */}
 
             <div className="h-screen relative">
-                <div className="w-full  flex gap-20 h-full">
-                    <div className="w-96"></div>
-                    <div className="w-full flex justify-center">
-                        <div
-                            className={`absolute right-5 justify-end pb-16 h-full flex flex-col`}
-                        >
-                            <ReturnToTop idToGoTo={"intro"} />
-                        </div>
+                <div className={`w-full flex gap-20 h-full ${isMobile()?"pb-20":""}`}>
+                    <div className="w-96 hidden lg:block"></div>
+                    <div className={`w-full flex justify-center`}>
                         <div className="w-full h-full flex flex-col justify-center items-center">
                             <motion.div
                                 className="h-fit w-3/4 2xl:w-2/4"
@@ -154,6 +150,9 @@ const Skills = () => {
                                 <OtherSkills textAnimation={OtextAnimation} />
                             </motion.div>
                         </div>
+                    </div>
+                    <div className={`absolute right-5 justify-end ${isMobile()? "hidden": "pb-20"} h-full flex flex-col`}>
+                        <ReturnToTop idToGoTo={"intro"} />
                     </div>
                 </div>
             </div>

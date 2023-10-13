@@ -4,15 +4,17 @@ export type pills = {
   others?: { name: string }[];
 };
 
+export type projectData={
+  Title: string;
+  Description: string;
+  pillsData: pills;
+  Image: JSX.Element;
+  pillsJustify:{frontend?:string, backend?:string, others?:string};
+  githubLink: string;
+}
+
 const useProjectsData = () => {
-  const projectsData: {
-    Title: string;
-    Description: string;
-    pillsData: pills;
-    Image: JSX.Element;
-    pillsJustify:{frontend?:string, backend?:string, others?:string};
-    githubLink: string;
-  }[] = [{
+  const projectsData: projectData[] = [{
     Image: <img src="/mef logo.svg" alt="project's logo" />,
     Title: "Hiring competitions platform",
     Description:

@@ -8,11 +8,11 @@ function App() {
     const contactDivRef = useRef<HTMLDivElement>(null);
     return (
         <div className="h-screen relative">
-{/*             <Navbar contactDivRef={contactDivRef}/>
-            <Home contactDivRef={contactDivRef}/> */}
-             <Skills />
- {/*           <Projects />
-            <Footer /> */}
+            <Navbar contactDivRef={contactDivRef}/>
+            <Home contactDivRef={contactDivRef}/> 
+            <Skills />
+            <Projects />
+            <Footer />
         </div>
     );
 }

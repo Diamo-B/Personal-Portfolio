@@ -1,9 +1,12 @@
 import {motion} from "framer-motion";
 import { UilAngleDoubleDown } from "@iconscout/react-unicons";
-const ScrollDown = () => {
+type Props={
+    nonAbsolute?:boolean
+} 
+const ScrollDown = ({nonAbsolute}:Props) => {
     return (
         <motion.div
-            className="w-full absolute bottom-0 flex flex-col justify-center items-center text-white"
+            className={`w-full ${nonAbsolute? "": "absolute bottom-0"}  flex flex-col justify-center items-center text-white`}
             initial={{
                 opacity: 0,
             }}

@@ -13,11 +13,11 @@ const Backend = ({textAnimation}: Props) => {
         <AnimatedText
           text={introText}
           colorSuffix="white"
-          sizeSuffix="lg"
+          size="text-sm lg:text-lg"
           cursorHeight="h-5"
         />
       }
-      <div className="max-h-full grid grid-cols-4 justify-items-center mt-5 h-fit gap-2 ">
+      <div className="max-h-full grid grid-cols-2 lg:grid-cols-4 justify-items-center mt-5 h-fit gap-2 ">
         <div className="flex justify-evenly">
           <div className="h-36 w-32 bg-white px-4 pt-1 rounded-2xl flex flex-col justify-center items-center gap-4">
             <img className="w-16" src="/springboot.svg" alt="" />

@@ -1,5 +1,6 @@
 import { UilArrowRight, UilTimesCircle } from '@iconscout/react-unicons'
 import {RefObject} from 'react'
+import isMobile from '../helpers/checkIfMobile';
 type Props = {
     parentRef: RefObject<HTMLDivElement|null>
 }
@@ -16,12 +17,9 @@ const Contact = ({parentRef}:Props) => {
                 onClick={(e) => {
                     e.preventDefault();
                     
-                    // Check if it's a mobile device
-                    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                
-                    if (isMobile) {
+                    if (isMobile()) {
                       // Open Gmail app with a new message
-                      window.location.href = "googlegmail://co?to=elkarni.bachar@gmail.com";
+                      e.currentTarget.href = "googlegmail://co?to=elkarni.bachar@gmail.com";
                     } else {
                       // Open Gmail website
                       window.open("https://mail.google.com/mail/?view=cm&to=elkarni.bachar@gmail.com", "_blank");

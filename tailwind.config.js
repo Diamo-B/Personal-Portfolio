@@ -9,7 +9,7 @@ export default {
       fontFamily:{
         ingrid: ["Ingrid Darling", "cursive"],
         itim: ["Itim", "cursive"],
-        "Roboto-mono": ['Roboto Mono', "monospace"]
+        "Roboto-mono": ['Roboto Mono', "monospace"],
       }
     },
   },

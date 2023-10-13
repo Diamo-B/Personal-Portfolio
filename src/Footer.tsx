@@ -28,8 +28,7 @@ const Footer = () => {
             className="w-full bg-slate-800 text-white flex flex-col items-center py-5 z-40"
             id="contact"
         >
-            <p>Made by Elkarni Bachar - 10/2023</p>
-            <p>Made using</p>
+            <p className="font-itim">Made by Elkarni Bachar using </p>
             <div>
                 <a href="https://react.dev/" target="__blank">
                     <motion.img
@@ -172,6 +171,7 @@ const Footer = () => {
                     </svg>
                 </a>
             </div>
+            <p className="font-itim">10-2023</p>
         </div>
     );
 };

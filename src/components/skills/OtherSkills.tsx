@@ -13,11 +13,11 @@ const OtherSkills = ({ textAnimation }: Props) => {
                 <AnimatedText
                     text={introText}
                     colorSuffix="white"
-                    sizeSuffix="lg"
+                    size="text-sm lg:text-lg"
                     cursorHeight="h-5"
                 />
             )}
-            <div className="max-h-full grid grid-cols-4 justify-items-center mt-5 h-fit gap-2 ">
+            <div className="max-h-full grid grid-cols-2 lg:grid-cols-4 justify-items-center mt-5 h-fit gap-2 ">
                 <div className="flex justify-evenly">
                     <div className="h-36 w-32 bg-white rounded-2xl flex flex-col py-3 items-center ">
                         <img className="w-24" src="/docker.svg" alt="" />
@@ -28,9 +28,9 @@ const OtherSkills = ({ textAnimation }: Props) => {
                 </div>
                 <div className="flex justify-evenly">
                     <div className="h-36 w-32 bg-white rounded-2xl flex flex-col items-center px-2 py-3">
-                        <img className="w-20" src="/archLinux.svg" alt="" />
+                        <img className="w-20" src="/linux.svg" alt="" />
                         <h1 className="font-bold text-sm text-center">
-                            bash/zsh & linux administration
+                            Linux administration
                         </h1>
                     </div>
                 </div>

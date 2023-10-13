@@ -5,7 +5,7 @@ import CursorBlinker from "./cursorBlinking";
 type Props = {
   text: string;
   colorSuffix?: string;
-  sizeSuffix?: string;
+  size?: string;
   cursorHeight?: string,
   isAnimationComplete?: Dispatch<SetStateAction<boolean>>
 };
@@ -13,7 +13,7 @@ type Props = {
 const AnimatedText = ({
   text,
   colorSuffix,
-  sizeSuffix,
+  size,
   cursorHeight,
   isAnimationComplete
 }: Props) => {
@@ -50,11 +50,11 @@ const AnimatedText = ({
   );
 
   const className = [
-    "font-itim",
+    "font-Roboto-mono lg:font-itim",
     "text-center",
     "font-bold lg:font-normal",
     colorSuffix ? `text-${colorSuffix}` : "",
-    sizeSuffix ? ` text-${sizeSuffix}` : "text-xl lg:text-5xl",
+    size ? ` ${size}` : "text-xl lg:text-5xl",
   ];
   return (
     <div>
