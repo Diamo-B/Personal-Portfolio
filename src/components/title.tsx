@@ -21,10 +21,12 @@ const Title = () => {
   };
 
   return (
-    <div className="w-full flex justify-center ">
+    <div className="w-full flex justify-center">
       <motion.svg
         viewBox="584.625,438.575,750.75,101.85001"
-        className={"item"}
+        strokeLinejoin={"round"}
+        strokeLinecap={"round"}
+        className={"w-[50%] lg:w-[27%] overflow-visible stroke-black stroke-2"}
       >
           <motion.path
             variants={icon}

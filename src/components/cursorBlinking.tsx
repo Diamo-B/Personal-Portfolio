@@ -23,7 +23,7 @@ export default function CursorBlinker({colorSuffix, height}:Props) {
     <motion.div
       variants={cursorVariants}
       animate="blinking"
-      className={`inline-block ${height||"h-10"} w-1 translate-y-1 ${colorSuffix? "bg-"+colorSuffix:"bg-slate-900"}`}
+      className={`inline-block ${height||"h-5 lg:h-10"} w-0.5 lg:w-1 translate-y-0.5 lg:translate-y-1 ${colorSuffix? "bg-"+colorSuffix:"bg-slate-900"}`}
     />
   );
 }

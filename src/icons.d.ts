@@ -11,5 +11,7 @@ declare module "@iconscout/react-unicons" {
     export const UilArrowCircleRight: Icon;
     export const UilArrowCircleLeft: Icon;
     export const UilAngleDoubleDown: Icon;
-    export const UilArrowRight: Icon
+    export const UilArrowRight: Icon;
+    export const UilTimesCircle: Icon;
+    export const UilBars: Icon;
 }

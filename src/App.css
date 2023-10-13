@@ -11,13 +11,3 @@ body{
   display: grid;
   grid-template-columns: 1fr;
 }
-
-
-.item {
-  width: 27%;
-  overflow: visible;
-  stroke: #000;
-  stroke-width: 2;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}

@@ -52,8 +52,9 @@ const AnimatedText = ({
   const className = [
     "font-itim",
     "text-center",
+    "font-bold lg:font-normal",
     colorSuffix ? `text-${colorSuffix}` : "",
-    sizeSuffix ? ` text-${sizeSuffix}` : " text-5xl",
+    sizeSuffix ? ` text-${sizeSuffix}` : "text-xl lg:text-5xl",
   ];
   return (
     <div>

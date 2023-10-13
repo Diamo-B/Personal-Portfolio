@@ -1,9 +1,14 @@
 import { AnimationPlaybackControls, animate, motion } from "framer-motion";
 import Title from "./components/title";
 import AnimatedText from "./components/AnimatedWrittenText";
-import { useState, useRef, useEffect } from "react";
-import { UilArrowRight } from '@iconscout/react-unicons'
-const Home = () => {
+import { useState, useRef, useEffect, RefObject } from "react";
+import Contact from "./components/Contact";
+
+type Props = {
+    contactDivRef: RefObject<HTMLDivElement>
+}
+
+const Home = ({contactDivRef}:Props) => {
     const [textAnimationCompleted, setTextAnimationCompleted] =
         useState<boolean>(false);
     const imageRef = useRef<HTMLImageElement>(null);
@@ -29,29 +34,20 @@ const Home = () => {
 
     const introText =
         "Hello, I'm Bachar, a passionate software engineering student from Morocco, having my senior year of studies at the Moroccan School of Engineering Sciences";
-
+    
     return (
-        <div className="h-full overflow-hidden pt-5 2xl:pt-28" id="intro">
-            <Title />
-            <div className="w-full flex justify-center items-center gap-2 mt-5">
-                <a className="w-42 bg-slate-900 border-2 border-slate-900 rounded-full text-white font-base text-lg font-itim px-5 py-1 flex items-center"
-                    href="https://mail.google.com/mail/?view=cm&to=elkarni.bachar%40gmail.com" target="__blank"
-                >
-                  Contact Me <UilArrowRight className="inline"/>
-                </a>
-                <button className="w-42 rounded-full text-slate-900 border-2 border-slate-900 font-base text-lg font-itim px-5 py-1">
-                  Download CV
-                </button>
-                <a className="w-10" href="https://github.com/Diamo-B" target="__blank">
-                  <img src="/github.svg" alt="github repo" />
-                </a>
-                <a className="w-14" href="https://www.linkedin.com/in/bachar-elkarni/" target="__blank">
-                  <img src="/linkedin.svg" alt="linkedin profile" />
-                </a>
+        <div className="h-full overflow-hidden flex flex-col pt-6 2xl:pt-28" id="intro">
+            <div className="w-full mb-5 lg:mb-0">
+                <Title />
             </div>
-            <div className="flex justify-center pl-24 2xl:pl-32">
-                <motion.div className="grid grid-cols-2 justify-items-center place-items-center ">
-                    <div className="min-w-full">
+            <div className="absolute h-full top-0 left-0 flex flex-col justify-center items-center z-50 bg-slate-900/60 w-full lg:h-fit lg:relative lg:flex-row lg:bg-transparent order-3 lg:-order-none"
+                ref={contactDivRef}
+            >
+                <Contact parentRef={contactDivRef}/>
+            </div>
+            <div className="flex justify-center lg:pl-24 2xl:pl-32">
+                <motion.div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center place-items-center ">
+                    <div className="px-10 lg:px-0 min-w-full">
                         <AnimatedText
                             text={introText}
                             isAnimationComplete={setTextAnimationCompleted}
@@ -61,6 +57,7 @@ const Home = () => {
                         src="/gears-removebg-preview.png"
                         alt="Gears image"
                         ref={imageRef}
+                        className="w-[70%] lg:w-[75%] xl:w-[65%]"
                         initial={{
                             scale: 0.5,
                             opacity: 0,
